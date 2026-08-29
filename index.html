@@ -16,7 +16,66 @@
 <link
   href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap"
   rel="stylesheet">
+/* DIMENSIONI DEFINITIVE */
 
+.brand-header {
+  padding: 14px 0 4px;
+}
+
+.logo {
+  width: min(210px, 58vw);
+}
+
+.brand-description {
+  margin-top: 7px;
+}
+
+.divider {
+  margin: 0 auto 8px;
+}
+
+.poster-frame {
+  max-width: min(520px, 100%);
+}
+
+.poster {
+  max-height: 72vh;
+  max-height: 72svh;
+}
+
+.booking-section {
+  padding-top: 12px;
+}
+
+footer {
+  margin-top: 12px;
+}
+
+@media (max-width: 650px) {
+  .brand-header {
+    padding: 10px 0 3px;
+  }
+
+  .logo {
+    width: min(180px, 52vw);
+  }
+
+  .divider {
+    margin-bottom: 6px;
+  }
+
+  .poster {
+    max-height: 66vh;
+    max-height: 66svh;
+  }
+}
+
+@media (max-height: 700px) {
+  .poster {
+    max-height: 60vh;
+    max-height: 60svh;
+  }
+}
 <style>
 :root {
   --cream: #f3e7d3;
