@@ -6,11 +6,11 @@
 
 <title>Beyond Sauvignon Blanc | Wine Up</title>
 
-<meta name="description" content="Join Wine Up for Beyond Sauvignon Blanc at Stubby's London on 15 September 2026. Six vibrant white wines and a special pairing menu.">
+<meta name="description" content="Beyond Sauvignon Blanc by Wine Up. Join us at Stubby's London on 15 September 2026.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
@@ -30,18 +30,18 @@ body {
   font-family: "Oswald", Arial, sans-serif;
 }
 
-/* WINE UP BRAND SECTION */
+/* WINE UP HEADER */
 
 .brand-header {
-  width: min(920px, calc(100% - 32px));
+  width: min(900px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 48px 0 25px;
+  padding: 46px 0 26px;
   text-align: center;
 }
 
 .logo {
   display: block;
-  width: min(270px, 68vw);
+  width: min(275px, 68vw);
   height: auto;
   margin: 0 auto;
 }
@@ -54,7 +54,7 @@ body {
   text-transform: uppercase;
 }
 
-/* DIVIDER */
+/* SEPARATION LINE */
 
 .divider {
   display: flex;
@@ -80,148 +80,49 @@ body {
   transform: rotate(45deg);
 }
 
-/* EVENT SECTION */
+/* EVENT POSTER */
 
 main {
-  width: min(920px, calc(100% - 32px));
+  width: min(820px, calc(100% - 30px));
   margin: 0 auto;
-  padding-bottom: 60px;
+  padding-bottom: 55px;
+}
+
+.poster-frame {
+  padding: 10px;
+  background: var(--light);
+  border: 2px solid var(--green);
+  box-shadow: 0 14px 35px rgba(53, 71, 44, .14);
 }
 
 .poster {
-  position: relative;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 52px 46px 42px;
-  background: rgba(250, 244, 232, .7);
-  border: 3px solid var(--green);
-  box-shadow: 0 14px 35px rgba(53, 71, 44, .12);
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* BOOKING */
+
+.booking-section {
+  padding: 36px 20px 0;
   text-align: center;
 }
 
-.poster::before {
-  content: "";
-  position: absolute;
-  inset: 9px;
-  border: 1px solid rgba(53, 71, 44, .55);
-  pointer-events: none;
-}
-
-.poster-content {
-  position: relative;
-  z-index: 1;
-}
-
-.eyebrow {
-  margin: 0 0 25px;
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-}
-
-h1 {
-  margin: 0 auto;
-  font-family: "Anton", Impact, sans-serif;
-  font-weight: 400;
-  text-transform: uppercase;
-}
-
-.beyond {
-  display: block;
-  font-size: clamp(76px, 17vw, 150px);
-  line-height: .84;
-  letter-spacing: -.025em;
-}
-
-.sauvignon {
-  display: block;
-  margin-top: 16px;
-  font-size: clamp(34px, 8.3vw, 73px);
-  line-height: 1;
-  letter-spacing: -.02em;
-  white-space: nowrap;
-}
-
-.tagline {
-  margin: 32px auto 17px;
-  font-family: "Anton", Impact, sans-serif;
-  font-size: clamp(21px, 3.5vw, 31px);
-  font-weight: 400;
-  line-height: 1.2;
-  text-transform: uppercase;
-}
-
-.intro {
-  max-width: 630px;
-  margin: 0 auto;
-  font-size: clamp(17px, 2.4vw, 20px);
-  line-height: 1.55;
-}
-
-/* EVENT DETAILS */
-
-.event-information {
-  margin-top: 36px;
-  padding-top: 30px;
-  border-top: 2px solid var(--green);
-}
-
-.details {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  margin-bottom: 28px;
-}
-
-.detail {
-  padding: 5px 18px;
-  border-right: 1px solid rgba(53, 71, 44, .4);
-}
-
-.detail:last-child {
-  border-right: 0;
-}
-
-.label {
-  display: block;
-  margin-bottom: 8px;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-}
-
-.value {
-  display: block;
-  font-family: "Anton", Impact, sans-serif;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 1.3;
-  text-transform: uppercase;
-}
-
-.location {
-  margin: 0 0 29px;
-  font-size: 17px;
-  line-height: 1.55;
-}
-
-.location strong {
-  font-family: "Anton", Impact, sans-serif;
-  font-size: 25px;
-  font-weight: 400;
-  text-transform: uppercase;
+.booking-text {
+  margin: 0 0 21px;
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .book-button {
   display: inline-block;
-  padding: 15px 40px;
+  padding: 16px 44px;
   background: var(--green);
   color: var(--cream);
   border: 2px solid var(--green);
   font-size: 17px;
   font-weight: 700;
-  letter-spacing: .1em;
+  letter-spacing: .11em;
   text-decoration: none;
   text-transform: uppercase;
   transition: .2s ease;
@@ -232,18 +133,10 @@ h1 {
   color: var(--green);
 }
 
-.note {
-  margin: 18px 0 0;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-}
-
 /* CONTACTS */
 
 footer {
-  margin-top: 48px;
+  margin-top: 47px;
   text-align: center;
   font-size: 14px;
   line-height: 2;
@@ -257,33 +150,23 @@ footer a {
 
 @media (max-width: 650px) {
   .brand-header {
-    padding-top: 35px;
+    padding-top: 34px;
   }
 
   .divider {
-    margin-bottom: 32px;
+    margin-bottom: 30px;
   }
 
-  .poster {
-    padding: 42px 21px 34px;
+  main {
+    width: min(100% - 20px, 820px);
   }
 
-  .poster::before {
-    inset: 7px;
+  .poster-frame {
+    padding: 5px;
   }
 
-  .details {
-    grid-template-columns: 1fr;
-  }
-
-  .detail {
-    padding: 15px 0;
-    border-right: 0;
-    border-bottom: 1px solid rgba(53, 71, 44, .35);
-  }
-
-  .detail:last-child {
-    border-bottom: 0;
+  .booking-section {
+    padding: 29px 8px 0;
   }
 
   .book-button {
@@ -296,8 +179,14 @@ footer a {
 <body>
 
 <header class="brand-header">
-  <img class="logo" src="wineup-logo.png" alt="Wine Up">
-  <p class="brand-description">Curated wine experiences</p>
+  <img
+    class="logo"
+    src="wineup-logo.png"
+    alt="Wine Up">
+
+  <p class="brand-description">
+    Curated wine experiences
+  </p>
 </header>
 
 <div class="divider" aria-hidden="true">
@@ -305,67 +194,29 @@ footer a {
 </div>
 
 <main>
-  <section class="poster">
-    <div class="poster-content">
 
-      <p class="eyebrow">The first Wine Up night</p>
+  <div class="poster-frame">
+    <img
+      class="poster"
+      src="beyond-sauvignon-blanc-web.png"
+      alt="Beyond Sauvignon Blanc wine tasting at Stubby's on 15 September 2026">
+  </div>
 
-      <h1>
-        <span class="beyond">Beyond</span>
-        <span class="sauvignon">Sauvignon Blanc</span>
-      </h1>
+  <section class="booking-section">
+    <p class="booking-text">
+      Ready to discover your next favourite white?
+    </p>
 
-      <p class="tagline">Your go-to white just got competition.</p>
-
-      <p class="intro">
-        Love Sauvignon Blanc but never know what else to order?
-        Meet its irresistible cousins through six vibrant white wines,
-        paired with a special menu by Stubby’s.
-      </p>
-
-      <div class="event-information">
-        <div class="details">
-
-          <div class="detail">
-            <span class="label">Date</span>
-            <span class="value">15 September 2026</span>
-          </div>
-
-          <div class="detail">
-            <span class="label">Time</span>
-            <span class="value">7:00 pm</span>
-          </div>
-
-          <div class="detail">
-            <span class="label">Tickets</span>
-            <span class="value">£40 per person</span>
-          </div>
-
-        </div>
-
-        <p class="location">
-          <strong>Stubby’s</strong><br>
-          28 Parsons Green Lane<br>
-          London SW6 4HS
-        </p>
-
-        <a
-          class="book-button"
-          href="https://checkout.square.site/merchant/MLZSPPA3CY54X/checkout/CKHLHPHBFSNTNXLIETANJMHJ"
-          target="_blank"
-          rel="noopener noreferrer">
-          Book your place
-        </a>
-
-        <p class="note">Limited availability</p>
-      </div>
-
-    </div>
+    <a
+      class="book-button"
+      href="https://checkout.square.site/merchant/MLZSPPA3CY54X/checkout/CKHLHPHBFSNTNXLIETANJMHJ"
+      target="_blank"
+      rel="noopener noreferrer">
+      Book your place
+    </a>
   </section>
 
   <footer>
-    Curated wine experiences<br>
-
     <a href="mailto:stefania@wineup.uk">
       stefania@wineup.uk
     </a><br>
@@ -377,6 +228,7 @@ footer a {
       Instagram · @wineup.uk
     </a>
   </footer>
+
 </main>
 
 </body>
