@@ -6,11 +6,16 @@
 
 <title>Beyond Sauvignon Blanc | Wine Up</title>
 
-<meta name="description" content="Beyond Sauvignon Blanc by Wine Up. Join us at Stubby's London on 15 September 2026.">
+<meta
+  name="description"
+  content="Beyond Sauvignon Blanc by Wine Up. Join us at Stubby's London on 15 September 2026.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap"
+  rel="stylesheet">
 
 <style>
 :root {
@@ -23,8 +28,13 @@
   box-sizing: border-box;
 }
 
+html,
 body {
   margin: 0;
+  min-height: 100%;
+}
+
+body {
   background: var(--cream);
   color: var(--green);
   font-family: "Oswald", Arial, sans-serif;
@@ -33,24 +43,24 @@ body {
 /* WINE UP HEADER */
 
 .brand-header {
-  width: min(900px, calc(100% - 32px));
+  width: min(700px, calc(100% - 30px));
   margin: 0 auto;
-  padding: 46px 0 26px;
+  padding: 25px 0 15px;
   text-align: center;
 }
 
 .logo {
   display: block;
-  width: min(275px, 68vw);
+  width: min(220px, 58vw);
   height: auto;
   margin: 0 auto;
 }
 
 .brand-description {
-  margin: 20px 0 0;
-  font-size: 12px;
+  margin: 12px 0 0;
+  font-size: 11px;
   font-weight: 600;
-  letter-spacing: .24em;
+  letter-spacing: .22em;
   text-transform: uppercase;
 }
 
@@ -59,9 +69,9 @@ body {
 .divider {
   display: flex;
   align-items: center;
-  gap: 15px;
-  width: min(760px, calc(100% - 44px));
-  margin: 5px auto 42px;
+  gap: 12px;
+  width: min(520px, calc(100% - 40px));
+  margin: 4px auto 18px;
 }
 
 .divider::before,
@@ -70,59 +80,71 @@ body {
   flex: 1;
   height: 1px;
   background: var(--green);
-  opacity: .65;
+  opacity: .6;
 }
 
 .divider span {
-  width: 9px;
-  height: 9px;
+  width: 7px;
+  height: 7px;
   background: var(--green);
   transform: rotate(45deg);
 }
 
-/* EVENT POSTER */
+/* MAIN CONTENT */
 
 main {
-  width: min(560px, calc(100% - 30px));
+  width: min(620px, calc(100% - 24px));
   margin: 0 auto;
-  padding-bottom: 55px;
+  padding-bottom: 22px;
+  text-align: center;
 }
 
+/* EVENT POSTER */
+
 .poster-frame {
-  padding: 10px;
+  display: inline-block;
+  max-width: min(430px, 100%);
+  margin: 0 auto;
+  padding: 5px;
   background: var(--light);
   border: 2px solid var(--green);
-  box-shadow: 0 14px 35px rgba(53, 71, 44, .14);
+  box-shadow: 0 8px 22px rgba(53, 71, 44, .13);
+  line-height: 0;
 }
 
 .poster {
   display: block;
-  width: 100%;
+  width: auto;
   height: auto;
+  max-width: 100%;
+
+  /* La locandina non supera metà dello schermo */
+  max-height: 52vh;
+  max-height: 52svh;
 }
 
 /* BOOKING */
 
 .booking-section {
-  padding: 36px 20px 0;
+  padding: 18px 10px 0;
   text-align: center;
 }
 
 .booking-text {
-  margin: 0 0 21px;
-  font-size: 18px;
+  margin: 0 0 13px;
+  font-size: 16px;
   font-weight: 500;
 }
 
 .book-button {
   display: inline-block;
-  padding: 16px 44px;
+  padding: 12px 35px;
   background: var(--green);
   color: var(--cream);
   border: 2px solid var(--green);
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 700;
-  letter-spacing: .11em;
+  letter-spacing: .1em;
   text-decoration: none;
   text-transform: uppercase;
   transition: .2s ease;
@@ -136,41 +158,90 @@ main {
 /* CONTACTS */
 
 footer {
-  margin-top: 47px;
+  margin-top: 18px;
   text-align: center;
-  font-size: 14px;
-  line-height: 2;
+  font-size: 13px;
+  line-height: 1.8;
 }
 
 footer a {
   color: var(--green);
   text-decoration: none;
-  border-bottom: 1px solid rgba(53, 71, 44, .45);
+  border-bottom: 1px solid rgba(53, 71, 44, .4);
 }
+
+/* MOBILE */
 
 @media (max-width: 650px) {
   .brand-header {
-    padding-top: 34px;
+    padding-top: 18px;
+  }
+
+  .logo {
+    width: min(190px, 55vw);
   }
 
   .divider {
-    margin-bottom: 30px;
+    margin-bottom: 14px;
   }
 
-  main {
-    width: min(100% - 20px, 820px);
-  }
-
-  .poster-frame {
-    padding: 5px;
+  .poster {
+    max-height: 50vh;
+    max-height: 50svh;
   }
 
   .booking-section {
-    padding: 29px 8px 0;
+    padding-top: 15px;
+  }
+
+  .booking-text {
+    font-size: 15px;
   }
 
   .book-button {
-    width: 100%;
+    width: min(100%, 330px);
+  }
+
+  footer {
+    margin-top: 15px;
+  }
+}
+
+/* SCHERMI BASSI */
+
+@media (max-height: 700px) {
+  .brand-header {
+    padding-top: 12px;
+    padding-bottom: 10px;
+  }
+
+  .logo {
+    width: 170px;
+  }
+
+  .brand-description {
+    margin-top: 8px;
+  }
+
+  .divider {
+    margin-bottom: 10px;
+  }
+
+  .poster {
+    max-height: 43vh;
+    max-height: 43svh;
+  }
+
+  .booking-section {
+    padding-top: 11px;
+  }
+
+  .booking-text {
+    margin-bottom: 9px;
+  }
+
+  footer {
+    margin-top: 10px;
   }
 }
 </style>
