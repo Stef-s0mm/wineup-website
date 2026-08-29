@@ -3,31 +3,249 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Wine Up — Coming Soon</title>
-<meta name="description" content="Curated wine experiences in London. Corporate events, private tastings and wine education.">
+<title>Beyond Sauvignon Blanc | Wine Up</title>
+<meta name="description" content="Join Wine Up for Beyond Sauvignon Blanc at Stubby's London on 15 September 2026. Six vibrant white wines and a special pairing menu.">
+
 <style>
-:root{--cream:#efe6d6;--green:#5d642f;--text:#2f3320}
-*{box-sizing:border-box}
-html,body{margin:0;min-height:100%;background:var(--cream);color:var(--text);font-family:Arial,Helvetica,sans-serif}
-body{display:flex;align-items:center;justify-content:center;padding:32px 20px}
-main{width:min(760px,100%);text-align:center;animation:fadeIn 1.2s ease both}
-.logo{display:block;width:min(260px,65vw);height:auto;margin:0 auto 34px}
-h1{margin:0 0 16px;font-size:clamp(28px,4vw,46px);line-height:1.15;font-weight:500;letter-spacing:.02em}
-.services{margin:0 auto 28px;max-width:620px;font-size:clamp(15px,2vw,18px);line-height:1.7;letter-spacing:.02em}
-.coming{margin:0 0 30px;font-size:14px;text-transform:uppercase;letter-spacing:.18em;color:var(--green)}
-a{color:var(--green);text-decoration:none;border-bottom:1px solid rgba(93,100,47,.4);padding-bottom:2px}
-footer{margin-top:34px;font-size:13px;opacity:.75}
-@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+:root {
+  --cream: #efe6d6;
+  --green: #5d642f;
+  --dark: #2f3320;
+  --light: #faf7f0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--dark);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+  width: min(900px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 42px 0 55px;
+  text-align: center;
+}
+
+.logo {
+  display: block;
+  width: min(230px, 62vw);
+  height: auto;
+  margin: 0 auto 35px;
+}
+
+.eyebrow {
+  margin: 0 0 18px;
+  color: var(--green);
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+
+h1 {
+  max-width: 800px;
+  margin: 0 auto 15px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(42px, 8vw, 78px);
+  font-weight: 400;
+  line-height: .98;
+  letter-spacing: -.03em;
+}
+
+.tagline {
+  margin: 22px auto 12px;
+  color: var(--green);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(23px, 4vw, 34px);
+  font-style: italic;
+}
+
+.intro {
+  max-width: 650px;
+  margin: 0 auto 34px;
+  font-size: clamp(17px, 2.5vw, 20px);
+  line-height: 1.65;
+}
+
+.event-card {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 34px;
+  background: rgba(250, 247, 240, .72);
+  border: 1px solid rgba(93, 100, 47, .35);
+  border-radius: 4px;
+}
+
+.details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin-bottom: 30px;
+}
+
+.detail {
+  padding: 8px 18px;
+  border-right: 1px solid rgba(93, 100, 47, .3);
+}
+
+.detail:last-child {
+  border-right: 0;
+}
+
+.label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--green);
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.value {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 19px;
+  line-height: 1.4;
+}
+
+.location {
+  margin: 0 0 30px;
+  line-height: 1.7;
+}
+
+.book-button {
+  display: inline-block;
+  padding: 16px 34px;
+  background: var(--green);
+  color: white;
+  border: 2px solid var(--green);
+  border-radius: 2px;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: .1em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: .2s ease;
+}
+
+.book-button:hover {
+  background: transparent;
+  color: var(--green);
+}
+
+.note {
+  margin: 20px 0 0;
+  font-size: 13px;
+  opacity: .72;
+}
+
+footer {
+  margin-top: 42px;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+footer a {
+  color: var(--green);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(93, 100, 47, .4);
+}
+
+@media (max-width: 650px) {
+  main {
+    padding-top: 28px;
+  }
+
+  .event-card {
+    padding: 28px 20px;
+  }
+
+  .details {
+    grid-template-columns: 1fr;
+  }
+
+  .detail {
+    padding: 15px 0;
+    border-right: 0;
+    border-bottom: 1px solid rgba(93, 100, 47, .25);
+  }
+
+  .detail:last-child {
+    border-bottom: 0;
+  }
+
+  .book-button {
+    width: 100%;
+  }
+}
 </style>
 </head>
+
 <body>
 <main>
-<img class="logo" src="wineup-logo.png" alt="Wine Up logo">
-<h1>Curated wine experiences in London.</h1>
-<p class="services">Corporate events · Private tastings · Wine education</p>
-<p class="coming">Website coming soon</p>
-<p><a href="mailto:stefania@wineup.uk">stefania@wineup.uk</a></p>
-<footer>Wine Up · London</footer>
+  <img class="logo" src="wineup-logo.png" alt="Wine Up">
+
+  <p class="eyebrow">The first Wine Up night</p>
+
+  <h1>Beyond<br>Sauvignon Blanc</h1>
+
+  <p class="tagline">Your go-to white just got competition.</p>
+
+  <p class="intro">
+    Love Sauvignon Blanc but never know what else to order?
+    Meet its irresistible cousins through six vibrant white wines,
+    paired with a special menu by Stubby’s.
+  </p>
+
+  <section class="event-card">
+    <div class="details">
+      <div class="detail">
+        <span class="label">Date</span>
+        <span class="value">15 September 2026</span>
+      </div>
+
+      <div class="detail">
+        <span class="label">Time</span>
+        <span class="value">7:00 pm</span>
+      </div>
+
+      <div class="detail">
+        <span class="label">Tickets</span>
+        <span class="value">£40 per person</span>
+      </div>
+    </div>
+
+    <p class="location">
+      <strong>Stubby’s</strong><br>
+      28 Parsons Green Lane<br>
+      London SW6 4HS
+    </p>
+
+    <a
+      class="book-button"
+      href="https://checkout.square.site/merchant/MLZSPPA3CY54X/checkout/CKHLHPHBFSNTNXLIETANJMHJ"
+      target="_blank"
+      rel="noopener noreferrer">
+      Book your place
+    </a>
+
+    <p class="note">Places are limited.</p>
+  </section>
+
+  <footer>
+    Curated wine experiences<br>
+    <a href="mailto:stefania@wineup.uk">stefania@wineup.uk</a>
+  </footer>
 </main>
 </body>
 </html>
