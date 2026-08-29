@@ -16,66 +16,7 @@
 <link
   href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap"
   rel="stylesheet">
-/* DIMENSIONI DEFINITIVE */
 
-.brand-header {
-  padding: 14px 0 4px;
-}
-
-.logo {
-  width: min(210px, 58vw);
-}
-
-.brand-description {
-  margin-top: 7px;
-}
-
-.divider {
-  margin: 0 auto 8px;
-}
-
-.poster-frame {
-  max-width: min(520px, 100%);
-}
-
-.poster {
-  max-height: 72vh;
-  max-height: 72svh;
-}
-
-.booking-section {
-  padding-top: 12px;
-}
-
-footer {
-  margin-top: 12px;
-}
-
-@media (max-width: 650px) {
-  .brand-header {
-    padding: 10px 0 3px;
-  }
-
-  .logo {
-    width: min(180px, 52vw);
-  }
-
-  .divider {
-    margin-bottom: 6px;
-  }
-
-  .poster {
-    max-height: 66vh;
-    max-height: 66svh;
-  }
-}
-
-@media (max-height: 700px) {
-  .poster {
-    max-height: 60vh;
-    max-height: 60svh;
-  }
-}
 <style>
 :root {
   --cream: #f3e7d3;
@@ -99,38 +40,38 @@ body {
   font-family: "Oswald", Arial, sans-serif;
 }
 
-/* WINE UP HEADER */
+/* WINE UP LOGO */
 
 .brand-header {
   width: min(700px, calc(100% - 30px));
   margin: 0 auto;
-  padding: 25px 0 15px;
+  padding: 14px 0 4px;
   text-align: center;
 }
 
 .logo {
   display: block;
-  width: min(220px, 58vw);
+  width: min(210px, 58vw);
   height: auto;
   margin: 0 auto;
 }
 
 .brand-description {
-  margin: 12px 0 0;
+  margin: 7px 0 0;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: .22em;
   text-transform: uppercase;
 }
 
-/* SEPARATION LINE */
+/* LINEA DI SEPARAZIONE */
 
 .divider {
   display: flex;
   align-items: center;
   gap: 12px;
-  width: min(520px, calc(100% - 40px));
-  margin: 4px auto 18px;
+  width: min(500px, calc(100% - 40px));
+  margin: 0 auto 8px;
 }
 
 .divider::before,
@@ -154,56 +95,50 @@ body {
 main {
   width: min(620px, calc(100% - 24px));
   margin: 0 auto;
-  padding-bottom: 22px;
+  padding-bottom: 18px;
   text-align: center;
 }
 
-/* EVENT POSTER */
+/* LOCANDINA */
+
+/*
+  Il calcolo basato sull’altezza dello schermo permette
+  alla locandina di essere grande e leggibile, senza
+  occupare più del 70% della schermata.
+*/
 
 .poster-frame {
-  display: inline-block;
-  max-width: min(470px, 100%);
+  width: min(520px, 100%, 49.4vh);
+  width: min(520px, 100%, 49.4svh);
   margin: 0 auto;
   padding: 5px;
   background: var(--light);
   border: 2px solid var(--green);
   box-shadow: 0 8px 22px rgba(53, 71, 44, .13);
-  line-height: 0;
 }
 
 .poster {
   display: block;
-  width: auto;
+  width: 100%;
   height: auto;
-  max-width: 100%;
-
-  /* La locandina non supera metà dello schermo */
-  max-height: 58vh;
-  max-height: 58svh;
 }
 
-/* BOOKING */
+/* PRENOTAZIONE */
 
 .booking-section {
-  padding: 18px 10px 0;
+  padding: 13px 8px 0;
   text-align: center;
-}
-
-.booking-text {
-  margin: 0 0 13px;
-  font-size: 16px;
-  font-weight: 500;
 }
 
 .book-button {
   display: inline-block;
-  padding: 12px 35px;
+  padding: 12px 38px;
   background: var(--green);
   color: var(--cream);
   border: 2px solid var(--green);
   font-size: 15px;
   font-weight: 700;
-  letter-spacing: .1em;
+  letter-spacing: .11em;
   text-decoration: none;
   text-transform: uppercase;
   transition: .2s ease;
@@ -214,10 +149,10 @@ main {
   color: var(--green);
 }
 
-/* CONTACTS */
+/* CONTATTI */
 
 footer {
-  margin-top: 18px;
+  margin-top: 14px;
   text-align: center;
   font-size: 13px;
   line-height: 1.8;
@@ -229,74 +164,42 @@ footer a {
   border-bottom: 1px solid rgba(53, 71, 44, .4);
 }
 
-/* MOBILE */
+/* TELEFONO */
 
 @media (max-width: 650px) {
   .brand-header {
-    padding-top: 18px;
+    padding-top: 10px;
+    padding-bottom: 3px;
   }
 
   .logo {
-    width: min(190px, 55vw);
+    width: min(180px, 52vw);
+  }
+
+  .brand-description {
+    margin-top: 5px;
+    font-size: 10px;
   }
 
   .divider {
-    margin-bottom: 14px;
+    margin-bottom: 6px;
   }
 
-  .poster {
-    max-height: 50vh;
-    max-height: 50svh;
+  main {
+    width: min(100% - 16px, 620px);
+  }
+
+  .poster-frame {
+    width: min(100%, 46.5svh);
+    padding: 4px;
   }
 
   .booking-section {
-    padding-top: 15px;
-  }
-
-  .booking-text {
-    font-size: 15px;
+    padding-top: 10px;
   }
 
   .book-button {
     width: min(100%, 330px);
-  }
-
-  footer {
-    margin-top: 15px;
-  }
-}
-
-/* SCHERMI BASSI */
-
-@media (max-height: 700px) {
-  .brand-header {
-    padding-top: 12px;
-    padding-bottom: 10px;
-  }
-
-  .logo {
-    width: 170px;
-  }
-
-  .brand-description {
-    margin-top: 8px;
-  }
-
-  .divider {
-    margin-bottom: 10px;
-  }
-
-  .poster {
-    max-height: 43vh;
-    max-height: 43svh;
-  }
-
-  .booking-section {
-    padding-top: 11px;
-  }
-
-  .booking-text {
-    margin-bottom: 9px;
   }
 
   footer {
@@ -333,10 +236,6 @@ footer a {
   </div>
 
   <section class="booking-section">
-    <p class="booking-text">
-      Ready to discover your next favourite white?
-    </p>
-
     <a
       class="book-button"
       href="https://checkout.square.site/merchant/MLZSPPA3CY54X/checkout/CKHLHPHBFSNTNXLIETANJMHJ"
