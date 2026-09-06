@@ -22,9 +22,13 @@
     html { scroll-behavior: smooth; }
     body { margin: 0; background: var(--cream); color: var(--green); font-family: var(--body); font-size: 17px; line-height: 1.7; }
     img { max-width: 100%; }
-    .brand-header { width: min(760px, calc(100% - 32px)); margin: 0 auto; padding: 24px 0 12px; text-align: center; }
+    .brand-header { position: relative; width: min(760px, calc(100% - 32px)); margin: 0 auto; padding: 24px 0 12px; text-align: center; }
     .logo { display: block; width: min(290px, 72vw); height: auto; margin: 0 auto; }
     .brand-description { margin: 6px 0 0; font-size: 12px; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; }
+    .language-switcher { position: absolute; top: 30px; right: 0; display: flex; align-items: center; gap: 7px; font-size: 11px; font-weight: 600; letter-spacing: .12em; }
+    .language-switcher span { opacity: .45; }
+    .language-button { padding: 3px 1px; border: 0; border-bottom: 1px solid transparent; background: transparent; color: var(--green); font: inherit; cursor: pointer; opacity: .48; }
+    .language-button:hover, .language-button:focus-visible, .language-button.is-active { border-bottom-color: var(--green); opacity: 1; }
     .divider { display: flex; align-items: center; gap: 12px; width: min(760px, calc(100% - 40px)); margin: 0 auto; }
     .divider::before, .divider::after { content: ""; flex: 1; height: 1px; background: var(--green); opacity: .72; }
     .divider span { width: 8px; height: 8px; background: var(--green); transform: rotate(45deg); }
@@ -34,7 +38,7 @@
     .body-paragraph { max-width: 630px; margin: 0 0 19px; color: var(--green); font-family: var(--body); font-size: 1rem; font-weight: 400; line-height: 1.7; }
     .portrait-frame { position: relative; min-height: 100%; margin: 0; }
     .portrait-frame::after { content: ""; position: absolute; inset: 20px 0 0 20px; z-index: -1; border: 1px solid var(--green); }
-    .portrait { position: absolute; inset: 0 16px 16px 0; display: block; width: calc(100% - 16px); height: calc(100% - 16px); object-fit: cover; object-position: 48% center; }
+    .portrait { position: absolute; inset: 0 16px 16px 0; display: block; width: calc(100% - 16px); height: calc(100% - 16px); object-fit: cover; object-position: 28% center; }
     .portrait-caption { position: absolute; right: 16px; bottom: -24px; margin: 0; color: var(--green); font-size: 11px; font-weight: 600; letter-spacing: .08em; line-height: 1.4; text-align: right; text-transform: uppercase; }
     .motto { width: min(820px, 100%); margin: 0 auto; padding: 25px 20px; border-top: 1px solid var(--green); border-bottom: 1px solid var(--green); font-family: var(--heading); font-size: clamp(30px, 4vw, 45px); font-weight: 700; line-height: 1.15; text-align: center; }
     .services { padding: 110px 0 90px; }
@@ -68,7 +72,16 @@
     .event-copy .event-details { margin-bottom: 0; font-size: 12px; font-weight: 600; letter-spacing: .07em; text-transform: uppercase; }
     .book-button { display: inline-block; padding: 11px 18px; border: 1px solid var(--green); background: var(--green); color: var(--cream); font-size: 12px; font-weight: 600; letter-spacing: .1em; line-height: 1.2; text-decoration: none; text-transform: uppercase; transition: background .2s ease, color .2s ease; }
     .book-button:hover, .book-button:focus-visible { background: transparent; color: var(--green); }
+    .contact { margin-bottom: 90px; padding: clamp(42px, 6vw, 68px); background: var(--green-dark); color: var(--cream); }
+    .contact-label { margin: 0 0 22px; color: var(--cream); font-size: 12px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; opacity: .74; }
+    .contact-cta { display: inline-block; color: var(--cream); font-family: var(--body); font-size: clamp(37px, 4.2vw, 54px); font-weight: 600; letter-spacing: -.025em; line-height: 1; text-decoration: none; }
+    .contact-cta span { display: inline-block; transition: transform .2s ease; }
+    .contact-cta:hover span, .contact-cta:focus-visible span { transform: translate(6px, -4px); }
+    .contact-links { display: flex; flex-wrap: wrap; align-items: baseline; gap: 14px 34px; margin-top: 28px; }
+    .contact-links a { color: var(--cream); font-size: 14px; font-weight: 500; text-underline-offset: 5px; }
+    .contact-links a:first-child { font-size: 18px; }
     @media (max-width: 640px) {
+      .language-switcher { position: static; justify-content: center; margin-top: 10px; }
       .origin { grid-template-columns: 1fr; gap: 36px; padding-top: 54px; }
       .portrait-frame { width: min(560px, 100%); min-height: 0; margin: 0 auto; padding: 0 16px 16px 0; }
       .portrait { position: static; width: 100%; height: auto; aspect-ratio: 4 / 4.65; }
@@ -88,6 +101,8 @@
       .event-poster { width: 92px; height: 130px; flex-basis: 92px; }
       .event-copy { grid-template-columns: 1fr; gap: 17px; }
       .book-button { justify-self: start; }
+      .contact { margin-bottom: 54px; }
+      .contact-links { flex-direction: column; }
     }
     @media (max-width: 560px) {
       body { font-size: 16px; }
@@ -103,74 +118,194 @@
 <body>
   <header class="brand-header">
     <img class="logo" src="wineup-logo.png" alt="Wine Up">
-    <p class="brand-description">Curated wine experiences</p>
+    <p class="brand-description" data-i18n="brandDescription">Curated wine experiences</p>
+    <nav class="language-switcher" aria-label="Language selection">
+      <button class="language-button is-active" type="button" data-language="en" aria-pressed="true">EN</button>
+      <span aria-hidden="true">/</span>
+      <button class="language-button" type="button" data-language="it" aria-pressed="false">IT</button>
+    </nav>
   </header>
   <div class="divider" aria-hidden="true"><span></span></div>
   <main>
     <section class="origin" id="about">
       <div class="origin-copy">
-        <h1>About Wine Up</h1>
-        <p class="body-paragraph">Wine Up was born to break wine out of fine dining and put it where it truly comes alive: between people.</p>
-        <p class="body-paragraph">After years working in some of the world’s best restaurants across France, Northern Ireland and England, I wanted to create a wine experience that felt more open, more human and far less formal.</p>
-        <p class="body-paragraph">Every bottle has a personality, just like every person. Some are bright and easy-going; others are deeper, more complex and take time to understand. Discovering both is what Wine Up is all about.</p>
+        <h1 data-i18n="aboutTitle">About Wine Up</h1>
+        <p class="body-paragraph" data-i18n="aboutParagraph1">Wine Up was born to break wine out of fine dining and put it where it truly comes alive: between people.</p>
+        <p class="body-paragraph" data-i18n="aboutParagraph2">After years working in some of the world’s best restaurants across France, Northern Ireland and England, I wanted to create a wine experience that felt more open, more human and far less formal.</p>
+        <p class="body-paragraph" data-i18n="aboutParagraph3">Every bottle has a personality, just like every person. Some are bright and easy-going; others are deeper, more complex and take time to understand. Discovering both is what Wine Up is all about.</p>
       </div>
       <figure class="portrait-frame">
-        <img class="portrait" src="stefania-wine-up.webp" alt="Stefania Sanseverino, founder of Wine Up" width="1400" height="935">
-        <figcaption class="portrait-caption">Stefania Sanseverino · WSET Level 3 · Wine Up Creator</figcaption>
+        <img class="portrait" src="stefania-wine-up.webp" alt="Stefania Sanseverino, founder of Wine Up" data-i18n-alt="portraitAlt" width="977" height="890">
+        <figcaption class="portrait-caption" data-i18n="portraitCaption">Stefania Sanseverino · WSET Level 3 · Wine Up Creator</figcaption>
       </figure>
     </section>
-    <p class="motto">The best pairing is wine and people.</p>
+    <p class="motto" data-i18n="motto">The best pairing is wine and people.</p>
 
     <section class="services" id="services">
       <div class="services-intro">
-        <h2>Services</h2>
-        <p>Every Wine Up experience is shaped around your group, your occasion and your venue. New to wine? You’ll feel completely at ease. Already an enthusiast? You’ll find something new to explore. Expect carefully chosen wines, playful sensory games and plenty of ways to put your taste buds to the test.</p>
+        <h2 data-i18n="servicesTitle">Services</h2>
+        <p data-i18n="servicesIntro">Every Wine Up experience is shaped around your group, your occasion and your venue. New to wine? You’ll feel completely at ease. Already an enthusiast? You’ll find something new to explore. Expect carefully chosen wines, playful sensory games and plenty of ways to put your taste buds to the test.</p>
       </div>
 
       <div class="service-list">
         <article class="service-row">
           <div class="service-copy">
-            <span class="service-number">01 · At home or at your chosen venue</span>
-            <h3>Private Tastings</h3>
-            <p>Your home, a venue you love and a line-up created for your group. From birthdays and celebrations to an evening with friends, each tasting gives everyone space to get involved, explore the wines and decide what they genuinely enjoy. Complete beginners and experienced wine lovers are equally welcome.</p>
+            <span class="service-number" data-i18n="privateLabel">At home or at your chosen venue</span>
+            <h3 data-i18n="privateTitle">Private Tastings</h3>
+            <p data-i18n="privateCopy">Your home, a venue you love and a line-up created for your group. From birthdays and celebrations to an evening with friends, each tasting gives everyone space to get involved, explore the wines and decide what they genuinely enjoy. Complete beginners and experienced wine lovers are equally welcome.</p>
           </div>
-          <img class="service-image" src="private-tastings.webp" alt="A private wine tasting table at home with charcuterie and three wine glasses at each place" width="1400" height="933" loading="lazy">
+          <img class="service-image" src="private-tastings.webp" alt="A private wine tasting table at home with charcuterie and three wine glasses at each place" data-i18n-alt="privateAlt" width="1400" height="933" loading="lazy">
         </article>
 
         <article class="service-row reverse">
-          <img class="service-image" src="corporate-experiences.webp" alt="A professional wine tasting table prepared with rows of glasses and tasting notes" width="1600" height="1067" loading="lazy">
+          <img class="service-image" src="corporate-experiences.webp" alt="A professional wine tasting table prepared with rows of glasses and tasting notes" data-i18n-alt="corporateAlt" width="1600" height="1067" loading="lazy">
           <div class="service-copy">
-            <span class="service-number">At your office or chosen venue</span>
-            <h3>Corporate Experiences</h3>
-            <p>Wine Up creates tastings for team evenings, client events and professional networking, delivered at your office or a venue of your choice. The theme, wines and format are shaped around the people in the room and what you want the event to achieve.</p>
+            <span class="service-number" data-i18n="corporateLabel">At your office or chosen venue</span>
+            <h3 data-i18n="corporateTitle">Corporate Experiences</h3>
+            <p data-i18n="corporateCopy">Wine Up creates tastings for team evenings, client events and professional networking, delivered at your office or a venue of your choice. The theme, wines and format are shaped around the people in the room and what you want the event to achieve.</p>
           </div>
         </article>
 
         <article class="service-row wide">
-          <img class="service-image" src="venue-partnerships.webp" alt="A warm wine venue interior with illuminated lamps and a wall of bottles" width="1600" height="800" loading="lazy">
+          <img class="service-image" src="venue-partnerships.webp" alt="A warm wine venue interior with an illuminated Wine Tasting Night sign" data-i18n-alt="venueAlt" width="1200" height="1600" loading="lazy">
           <div class="service-copy">
-            <span class="service-number">03 · One-off or recurring</span>
-            <h3>Venue Partnerships</h3>
-            <p>For wine bars, hotels and private members’ clubs, a tasting can become a one-off event or a regular wine night. The place sets the mood; Wine Up builds the experience around it.</p>
+            <span class="service-number" data-i18n="venueLabel">One-off or recurring</span>
+            <h3 data-i18n="venueTitle">Venue Partnerships</h3>
+            <p data-i18n="venueCopy">For wine bars, hotels and private members’ clubs, a tasting can become a one-off event or a regular wine night. The place sets the mood; Wine Up builds the experience around it.</p>
           </div>
         </article>
       </div>
     </section>
 
     <section class="upcoming" id="events">
-      <h2>Upcoming Events</h2>
+      <h2 data-i18n="upcomingTitle">Upcoming Events</h2>
       <article class="event-strip">
-        <img class="event-poster" src="beyond-sauvignon-blanc-web.png" alt="Beyond Sauvignon Blanc event poster" width="106" height="150" loading="lazy">
+        <img class="event-poster" src="beyond-sauvignon-blanc-web.png" alt="Beyond Sauvignon Blanc event poster" data-i18n-alt="eventAlt" width="106" height="150" loading="lazy">
         <div class="event-copy">
           <div>
             <h3>Beyond Sauvignon Blanc</h3>
-            <p>Six vibrant whites and a special pairing menu by Stubby’s.</p>
-            <p class="event-details">15 September 2026 · 7pm · Stubby’s, Parsons Green · £40</p>
+            <p data-i18n="eventCopy">Six vibrant whites and a special pairing menu by Stubby’s.</p>
+            <p class="event-details" data-i18n="eventDetails">15 September 2026 · 7pm · Stubby’s, Parsons Green · £40</p>
           </div>
-          <a class="book-button" href="https://checkout.square.site/merchant/MLZSPPA3CY54X/checkout/CKHLHPHBFSNTNXLIETANJMHJ" target="_blank" rel="noopener">Book your place</a>
+          <a class="book-button" href="https://checkout.square.site/merchant/MLZSPPA3CY54X/checkout/CKHLHPHBFSNTNXLIETANJMHJ" target="_blank" rel="noopener" data-i18n="bookButton">Book your place</a>
         </div>
       </article>
     </section>
+
+    <section class="contact" id="contact">
+      <p class="contact-label" data-i18n="contactLabel">Contact</p>
+      <a class="contact-cta" href="mailto:stefania@wineup.uk?subject=Wine%20Up%20enquiry">Let’s make it happen <span aria-hidden="true">↗</span></a>
+      <div class="contact-links">
+        <a href="mailto:stefania@wineup.uk">stefania@wineup.uk</a>
+        <a href="https://www.instagram.com/wineup.uk/" target="_blank" rel="noopener noreferrer">Instagram · @wineup.uk</a>
+      </div>
+    </section>
   </main>
+  <script>
+    const translations = {
+      en: {
+        metaTitle: "Wine Up | Wine Experiences Built Around People",
+        metaDescription: "Wine Up creates welcoming wine experiences built around people.",
+        brandDescription: "Curated wine experiences",
+        aboutTitle: "About Wine Up",
+        aboutParagraph1: "Wine Up was born to break wine out of fine dining and put it where it truly comes alive: between people.",
+        aboutParagraph2: "After years working in some of the world’s best restaurants across France, Northern Ireland and England, I wanted to create a wine experience that felt more open, more human and far less formal.",
+        aboutParagraph3: "Every bottle has a personality, just like every person. Some are bright and easy-going; others are deeper, more complex and take time to understand. Discovering both is what Wine Up is all about.",
+        portraitAlt: "Stefania Sanseverino, founder of Wine Up",
+        portraitCaption: "Stefania Sanseverino · WSET Level 3 · Wine Up Creator",
+        motto: "The best pairing is wine and people.",
+        servicesTitle: "Services",
+        servicesIntro: "Every Wine Up experience is shaped around your group, your occasion and your venue. New to wine? You’ll feel completely at ease. Already an enthusiast? You’ll find something new to explore. Expect carefully chosen wines, playful sensory games and plenty of ways to put your taste buds to the test.",
+        privateLabel: "At home or at your chosen venue",
+        privateTitle: "Private Tastings",
+        privateCopy: "Your home, a venue you love and a line-up created for your group. From birthdays and celebrations to an evening with friends, each tasting gives everyone space to get involved, explore the wines and decide what they genuinely enjoy. Complete beginners and experienced wine lovers are equally welcome.",
+        privateAlt: "A private wine tasting table at home with charcuterie and three wine glasses at each place",
+        corporateLabel: "At your office or chosen venue",
+        corporateTitle: "Corporate Experiences",
+        corporateCopy: "Wine Up creates tastings for team evenings, client events and professional networking, delivered at your office or a venue of your choice. The theme, wines and format are shaped around the people in the room and what you want the event to achieve.",
+        corporateAlt: "A professional wine tasting table prepared with rows of glasses and tasting notes",
+        venueLabel: "One-off or recurring",
+        venueTitle: "Venue Partnerships",
+        venueCopy: "For wine bars, hotels and private members’ clubs, a tasting can become a one-off event or a regular wine night. The place sets the mood; Wine Up builds the experience around it.",
+        venueAlt: "A warm wine venue interior with an illuminated Wine Tasting Night sign",
+        upcomingTitle: "Upcoming Events",
+        eventAlt: "Beyond Sauvignon Blanc event poster",
+        eventCopy: "Six vibrant whites and a special pairing menu by Stubby’s.",
+        eventDetails: "15 September 2026 · 7pm · Stubby’s, Parsons Green · £40",
+        bookButton: "Book your place",
+        contactLabel: "Contact"
+      },
+      it: {
+        metaTitle: "Wine Up | Esperienze di vino costruite intorno alle persone",
+        metaDescription: "Wine Up crea esperienze di vino accoglienti, costruite intorno alle persone.",
+        brandDescription: "Esperienze di vino su misura",
+        aboutTitle: "Come nasce Wine Up",
+        aboutParagraph1: "Wine Up nasce per portare il vino fuori dall’alta ristorazione e riportarlo dove prende davvero vita: tra le persone.",
+        aboutParagraph2: "Dopo anni trascorsi in alcuni dei migliori ristoranti al mondo, tra Francia, Irlanda del Nord e Inghilterra, ho voluto creare un’esperienza del vino più aperta, più umana e molto meno formale.",
+        aboutParagraph3: "Ogni bottiglia ha una personalità, proprio come ogni persona. Alcune sono vivaci e immediate; altre più profonde, complesse e richiedono tempo per essere comprese. Wine Up nasce dal piacere di scoprirle entrambe.",
+        portraitAlt: "Stefania Sanseverino, fondatrice di Wine Up",
+        portraitCaption: "Stefania Sanseverino · WSET Level 3 · Creatrice di Wine Up",
+        motto: "L’abbinamento migliore? Vino e persone.",
+        servicesTitle: "Servizi",
+        servicesIntro: "Ogni esperienza Wine Up viene costruita intorno al tuo gruppo, all’occasione e alla location. Se il vino è una novità, ti sentirai subito a tuo agio. Se sei già un appassionato, troverai qualcosa di nuovo da esplorare. Aspettati vini scelti con cura, giochi sensoriali e tanti modi per mettere alla prova il tuo palato.",
+        privateLabel: "A casa o nella location che preferisci",
+        privateTitle: "Degustazioni private",
+        privateCopy: "A casa tua, in una location che ami, con una selezione creata per il tuo gruppo. Dai compleanni e le occasioni speciali a una serata tra amici, ogni degustazione lascia a tutti lo spazio per partecipare, esplorare i vini e capire cosa piace davvero. Principianti assoluti e wine lover esperti sono ugualmente benvenuti.",
+        privateAlt: "Tavola preparata per una degustazione privata con salumi e tre calici per ogni ospite",
+        corporateLabel: "Nel tuo ufficio o nella location che preferisci",
+        corporateTitle: "Esperienze aziendali",
+        corporateCopy: "Wine Up crea degustazioni per serate di team, eventi con i clienti e networking professionale, nel tuo ufficio o in una location a tua scelta. Tema, vini e formato vengono definiti intorno alle persone presenti e all’obiettivo dell’evento.",
+        corporateAlt: "Tavola professionale preparata per una degustazione con file di calici e schede di assaggio",
+        venueLabel: "Evento unico o appuntamento ricorrente",
+        venueTitle: "Collaborazioni con location",
+        venueCopy: "Per wine bar, hotel e club privati, una degustazione può diventare un evento speciale o un appuntamento ricorrente. La location crea l’atmosfera; Wine Up costruisce l’esperienza intorno ad essa.",
+        venueAlt: "Interno accogliente di una wine venue con la scritta luminosa Wine Tasting Night",
+        upcomingTitle: "Prossimi eventi",
+        eventAlt: "Locandina dell’evento Beyond Sauvignon Blanc",
+        eventCopy: "Sei vini bianchi vibranti e uno speciale menu in abbinamento firmato Stubby’s.",
+        eventDetails: "15 settembre 2026 · ore 19 · Stubby’s, Parsons Green · £40",
+        bookButton: "Prenota il tuo posto",
+        contactLabel: "Contatti"
+      }
+    };
+
+    const languageButtons = document.querySelectorAll("[data-language]");
+    const descriptionMeta = document.querySelector('meta[name="description"]');
+
+    function setLanguage(language) {
+      const selectedLanguage = translations[language] ? language : "en";
+      const copy = translations[selectedLanguage];
+
+      document.documentElement.lang = selectedLanguage;
+      document.title = copy.metaTitle;
+      descriptionMeta.setAttribute("content", copy.metaDescription);
+
+      document.querySelectorAll("[data-i18n]").forEach((element) => {
+        const key = element.dataset.i18n;
+        if (copy[key]) element.textContent = copy[key];
+      });
+
+      document.querySelectorAll("[data-i18n-alt]").forEach((element) => {
+        const key = element.dataset.i18nAlt;
+        if (copy[key]) element.alt = copy[key];
+      });
+
+      languageButtons.forEach((button) => {
+        const isActive = button.dataset.language === selectedLanguage;
+        button.classList.toggle("is-active", isActive);
+        button.setAttribute("aria-pressed", String(isActive));
+      });
+
+      localStorage.setItem("wineup-language", selectedLanguage);
+    }
+
+    languageButtons.forEach((button) => {
+      button.addEventListener("click", () => setLanguage(button.dataset.language));
+    });
+
+    const savedLanguage = localStorage.getItem("wineup-language");
+    const initialLanguage = savedLanguage || (navigator.language.toLowerCase().startsWith("it") ? "it" : "en");
+    setLanguage(initialLanguage);
+  </script>
 </body>
 </html>
