@@ -1,264 +1,176 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>Beyond Sauvignon Blanc | Wine Up</title>
-
-<meta
-  name="description"
-  content="Beyond Sauvignon Blanc by Wine Up. Join us at Stubby's London on 15 September 2026.">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link
-  href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap"
-  rel="stylesheet">
-
-<style>
-:root {
-  --cream: #f3e7d3;
-  --green: #35472c;
-  --light: #faf4e8;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  margin: 0;
-  min-height: 100%;
-}
-
-body {
-  background: var(--cream);
-  color: var(--green);
-  font-family: "Oswald", Arial, sans-serif;
-}
-
-/* WINE UP LOGO */
-
-.brand-header {
-  width: min(700px, calc(100% - 30px));
-  margin: 0 auto;
-  padding: 14px 0 4px;
-  text-align: center;
-}
-
-.logo {
-  display: block;
-  width: min(210px, 58vw);
-  height: auto;
-  margin: 0 auto;
-}
-
-.brand-description {
-  margin: 7px 0 0;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-}
-
-/* LINEA DI SEPARAZIONE */
-
-.divider {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  width: min(500px, calc(100% - 40px));
-  margin: 0 auto 8px;
-}
-
-.divider::before,
-.divider::after {
-  content: "";
-  flex: 1;
-  height: 1px;
-  background: var(--green);
-  opacity: .6;
-}
-
-.divider span {
-  width: 7px;
-  height: 7px;
-  background: var(--green);
-  transform: rotate(45deg);
-}
-
-/* MAIN CONTENT */
-
-main {
-  width: min(620px, calc(100% - 24px));
-  margin: 0 auto;
-  padding-bottom: 18px;
-  text-align: center;
-}
-
-/* LOCANDINA */
-
-/*
-  Il calcolo basato sull’altezza dello schermo permette
-  alla locandina di essere grande e leggibile, senza
-  occupare più del 70% della schermata.
-*/
-
-.poster-frame {
-  width: min(520px, 100%, 49.4vh);
-  width: min(520px, 100%, 49.4svh);
-  margin: 0 auto;
-  padding: 5px;
-  background: var(--light);
-  border: 2px solid var(--green);
-  box-shadow: 0 8px 22px rgba(53, 71, 44, .13);
-}
-
-.poster {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-/* PRENOTAZIONE */
-
-.booking-section {
-  padding: 13px 8px 0;
-  text-align: center;
-}
-
-.book-button {
-  display: inline-block;
-  padding: 12px 38px;
-  background: var(--green);
-  color: var(--cream);
-  border: 2px solid var(--green);
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: .11em;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: .2s ease;
-}
-
-.book-button:hover {
-  background: transparent;
-  color: var(--green);
-}
-
-/* CONTATTI */
-
-footer {
-  margin-top: 14px;
-  text-align: center;
-  font-size: 13px;
-  line-height: 1.8;
-}
-
-footer a {
-  color: var(--green);
-  text-decoration: none;
-  border-bottom: 1px solid rgba(53, 71, 44, .4);
-}
-
-/* TELEFONO */
-
-@media (max-width: 650px) {
-  .brand-header {
-    padding-top: 10px;
-    padding-bottom: 3px;
-  }
-
-  .logo {
-    width: min(180px, 52vw);
-  }
-
-  .brand-description {
-    margin-top: 5px;
-    font-size: 10px;
-  }
-
-  .divider {
-    margin-bottom: 6px;
-  }
-
-  main {
-    width: min(100% - 16px, 620px);
-  }
-
-  .poster-frame {
-    width: min(100%, 46.5svh);
-    padding: 4px;
-  }
-
-  .booking-section {
-    padding-top: 10px;
-  }
-
-  .book-button {
-    width: min(100%, 330px);
-  }
-
-  footer {
-    margin-top: 10px;
-  }
-}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wine Up | Wine Experiences Built Around People</title>
+  <meta name="description" content="Wine Up creates welcoming wine experiences built around people.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #f3e7d3;
+      --paper: #faf4e8;
+      --green: #35472c;
+      --green-dark: #253520;
+      --line: rgba(53, 71, 44, .62);
+      --heading: "Cormorant Garamond", Georgia, serif;
+      --body: "DM Sans", Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--cream); color: var(--green); font-family: var(--body); font-size: 17px; line-height: 1.7; }
+    img { max-width: 100%; }
+    .brand-header { width: min(760px, calc(100% - 32px)); margin: 0 auto; padding: 24px 0 12px; text-align: center; }
+    .logo { display: block; width: min(290px, 72vw); height: auto; margin: 0 auto; }
+    .brand-description { margin: 6px 0 0; font-size: 12px; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; }
+    .divider { display: flex; align-items: center; gap: 12px; width: min(760px, calc(100% - 40px)); margin: 0 auto; }
+    .divider::before, .divider::after { content: ""; flex: 1; height: 1px; background: var(--green); opacity: .72; }
+    .divider span { width: 8px; height: 8px; background: var(--green); transform: rotate(45deg); }
+    main { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .origin { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(290px, .92fr); gap: clamp(34px, 6vw, 72px); align-items: stretch; padding: clamp(58px, 8vw, 96px) 0 64px; }
+    .origin-copy h1 { margin: 0 0 27px; color: var(--green); font-family: var(--body); font-size: clamp(31px, 3.4vw, 44px); font-weight: 600; letter-spacing: -.02em; line-height: 1.08; }
+    .body-paragraph { max-width: 630px; margin: 0 0 19px; color: var(--green); font-family: var(--body); font-size: 1rem; font-weight: 400; line-height: 1.7; }
+    .portrait-frame { position: relative; min-height: 100%; margin: 0; }
+    .portrait-frame::after { content: ""; position: absolute; inset: 20px 0 0 20px; z-index: -1; border: 1px solid var(--green); }
+    .portrait { position: absolute; inset: 0 16px 16px 0; display: block; width: calc(100% - 16px); height: calc(100% - 16px); object-fit: cover; object-position: 48% center; }
+    .portrait-caption { position: absolute; right: 16px; bottom: -24px; margin: 0; color: var(--green); font-size: 11px; font-weight: 600; letter-spacing: .08em; line-height: 1.4; text-align: right; text-transform: uppercase; }
+    .motto { width: min(820px, 100%); margin: 0 auto; padding: 25px 20px; border-top: 1px solid var(--green); border-bottom: 1px solid var(--green); font-family: var(--heading); font-size: clamp(30px, 4vw, 45px); font-weight: 700; line-height: 1.15; text-align: center; }
+    .services { padding: 110px 0 90px; }
+    .services-intro { margin-bottom: 32px; }
+    .services-intro h2 { margin: 0; color: var(--green); font-size: clamp(37px, 4.2vw, 54px); font-weight: 600; letter-spacing: -.025em; line-height: 1; }
+    .services-intro p { max-width: 790px; margin: 26px 0 0; font-size: 1rem; line-height: 1.7; }
+    .service-list { display: grid; gap: 30px; }
+    .service-row { display: grid; grid-template-columns: 1fr 1fr; min-height: 380px; border: 1px solid rgba(53, 71, 44, .28); background: var(--paper); }
+    .service-copy { display: flex; flex-direction: column; justify-content: center; padding: clamp(38px, 5vw, 64px); }
+    .service-number { display: block; margin-bottom: 28px; font-size: 13px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; }
+    .service-copy h3 { margin: 0 0 20px; color: var(--green); font-size: clamp(30px, 3.2vw, 42px); font-weight: 600; letter-spacing: -.025em; line-height: 1.08; }
+    .service-copy p { margin: 0; font-size: 1rem; line-height: 1.7; }
+    .service-image { width: 100%; height: 100%; min-height: 380px; object-fit: cover; }
+    .service-visual { display: flex; flex-direction: column; justify-content: space-between; min-height: 380px; padding: 42px; background: #6e233d; color: var(--cream); }
+    .service-visual.green { background: var(--green-dark); }
+    .visual-number { font-family: var(--heading); font-size: clamp(92px, 13vw, 160px); font-weight: 700; line-height: .8; opacity: .9; }
+    .visual-note { max-width: 240px; font-size: 13px; font-weight: 600; letter-spacing: .14em; line-height: 1.5; text-transform: uppercase; }
+    .service-row.reverse .service-visual { order: 1; }
+    .service-row.reverse .service-copy { order: 2; }
+    .service-row.wide { position: relative; display: block; min-height: 340px; overflow: hidden; border: 0; background: var(--green-dark); color: var(--cream); }
+    .service-row.wide .service-image { position: absolute; inset: 0; width: 100%; height: 100%; min-height: 0; object-position: center; }
+    .service-row.wide .service-copy { position: relative; width: 56%; min-height: 340px; margin-right: auto; padding-top: 46px; padding-bottom: 46px; background: rgba(37, 53, 32, .94); }
+    .service-row.wide .service-number, .service-row.wide h3, .service-row.wide p { color: var(--cream); }
+    .upcoming { padding: 18px 0 86px; }
+    .upcoming h2 { margin: 0 0 24px; color: var(--green); font-size: clamp(37px, 4.2vw, 54px); font-weight: 600; letter-spacing: -.025em; line-height: 1; }
+    .event-strip { display: flex; align-items: center; gap: 36px; width: 100%; min-height: 340px; padding: clamp(38px, 5vw, 64px); border: 1px solid rgba(53, 71, 44, .28); background: var(--paper); }
+    .event-poster { width: 106px; height: 150px; flex: 0 0 106px; padding: 3px; border: 1px solid var(--green); background: var(--paper); object-fit: cover; }
+    .event-copy { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 30px; align-items: center; flex: 1; }
+    .event-copy h3 { margin: 0 0 8px; color: var(--green); font-size: clamp(25px, 2.6vw, 35px); font-weight: 600; letter-spacing: -.02em; line-height: 1.08; }
+    .event-copy p { margin: 0 0 7px; font-size: 15px; line-height: 1.5; }
+    .event-copy .event-details { margin-bottom: 0; font-size: 12px; font-weight: 600; letter-spacing: .07em; text-transform: uppercase; }
+    .book-button { display: inline-block; padding: 11px 18px; border: 1px solid var(--green); background: var(--green); color: var(--cream); font-size: 12px; font-weight: 600; letter-spacing: .1em; line-height: 1.2; text-decoration: none; text-transform: uppercase; transition: background .2s ease, color .2s ease; }
+    .book-button:hover, .book-button:focus-visible { background: transparent; color: var(--green); }
+    @media (max-width: 640px) {
+      .origin { grid-template-columns: 1fr; gap: 36px; padding-top: 54px; }
+      .portrait-frame { width: min(560px, 100%); min-height: 0; margin: 0 auto; padding: 0 16px 16px 0; }
+      .portrait { position: static; width: 100%; height: auto; aspect-ratio: 4 / 4.65; }
+      .portrait-caption { position: static; margin: 9px 16px 0 0; }
+      .services { padding: 78px 0 64px; }
+      .service-row { grid-template-columns: 1fr; }
+      .services-intro { margin-bottom: 38px; }
+      .service-row.reverse .service-copy { order: 1; }
+      .service-row.reverse .service-visual { order: 2; }
+      .service-row.reverse .service-image { order: 2; }
+      .service-row.wide { display: grid; grid-template-columns: 1fr; }
+      .service-row.wide .service-image { position: static; min-height: 230px; }
+      .service-row.wide .service-copy { width: 100%; min-height: 0; margin-right: 0; }
+      .service-image, .service-visual { min-height: 300px; }
+      .upcoming { padding: 14px 0 68px; }
+      .event-strip { align-items: flex-start; gap: 20px; min-height: 0; padding: 32px 24px; }
+      .event-poster { width: 92px; height: 130px; flex-basis: 92px; }
+      .event-copy { grid-template-columns: 1fr; gap: 17px; }
+      .book-button { justify-self: start; }
+    }
+    @media (max-width: 560px) {
+      body { font-size: 16px; }
+      .brand-header { padding-top: 18px; }
+      .logo { width: min(245px, 72vw); }
+      main { width: min(100% - 28px, 1120px); }
+      .origin { padding: 44px 0 48px; }
+      .origin-copy h1 { font-size: clamp(30px, 9vw, 39px); }
+      .motto { padding-inline: 6px; }
+    }
+  </style>
 </head>
-
 <body>
+  <header class="brand-header">
+    <img class="logo" src="wineup-logo.png" alt="Wine Up">
+    <p class="brand-description">Curated wine experiences</p>
+  </header>
+  <div class="divider" aria-hidden="true"><span></span></div>
+  <main>
+    <section class="origin" id="about">
+      <div class="origin-copy">
+        <h1>About Wine Up</h1>
+        <p class="body-paragraph">Wine Up was born to break wine out of fine dining and put it where it truly comes alive: between people.</p>
+        <p class="body-paragraph">After years working in some of the world’s best restaurants across France, Northern Ireland and England, I wanted to create a wine experience that felt more open, more human and far less formal.</p>
+        <p class="body-paragraph">Every bottle has a personality, just like every person. Some are bright and easy-going; others are deeper, more complex and take time to understand. Discovering both is what Wine Up is all about.</p>
+      </div>
+      <figure class="portrait-frame">
+        <img class="portrait" src="stefania-wine-up.webp" alt="Stefania Sanseverino, founder of Wine Up" width="1400" height="935">
+        <figcaption class="portrait-caption">Stefania Sanseverino · WSET Level 3 · Wine Up Creator</figcaption>
+      </figure>
+    </section>
+    <p class="motto">The best pairing is wine and people.</p>
 
-<header class="brand-header">
-  <img
-    class="logo"
-    src="wineup-logo.png"
-    alt="Wine Up">
+    <section class="services" id="services">
+      <div class="services-intro">
+        <h2>Services</h2>
+        <p>Every Wine Up experience is shaped around your group, your occasion and your venue. New to wine? You’ll feel completely at ease. Already an enthusiast? You’ll find something new to explore. Expect carefully chosen wines, playful sensory games and plenty of ways to put your taste buds to the test.</p>
+      </div>
 
-  <p class="brand-description">
-    Curated wine experiences
-  </p>
-</header>
+      <div class="service-list">
+        <article class="service-row">
+          <div class="service-copy">
+            <span class="service-number">01 · At home or at your chosen venue</span>
+            <h3>Private Tastings</h3>
+            <p>Your home, a venue you love and a line-up created for your group. From birthdays and celebrations to an evening with friends, each tasting gives everyone space to get involved, explore the wines and decide what they genuinely enjoy. Complete beginners and experienced wine lovers are equally welcome.</p>
+          </div>
+          <img class="service-image" src="private-tastings.webp" alt="A private wine tasting table at home with charcuterie and three wine glasses at each place" width="1400" height="933" loading="lazy">
+        </article>
 
-<div class="divider" aria-hidden="true">
-  <span></span>
-</div>
+        <article class="service-row reverse">
+          <img class="service-image" src="corporate-experiences.webp" alt="A professional wine tasting table prepared with rows of glasses and tasting notes" width="1600" height="1067" loading="lazy">
+          <div class="service-copy">
+            <span class="service-number">At your office or chosen venue</span>
+            <h3>Corporate Experiences</h3>
+            <p>Wine Up creates tastings for team evenings, client events and professional networking, delivered at your office or a venue of your choice. The theme, wines and format are shaped around the people in the room and what you want the event to achieve.</p>
+          </div>
+        </article>
 
-<main>
+        <article class="service-row wide">
+          <img class="service-image" src="venue-partnerships.webp" alt="A warm wine venue interior with illuminated lamps and a wall of bottles" width="1600" height="800" loading="lazy">
+          <div class="service-copy">
+            <span class="service-number">03 · One-off or recurring</span>
+            <h3>Venue Partnerships</h3>
+            <p>For wine bars, hotels and private members’ clubs, a tasting can become a one-off event or a regular wine night. The place sets the mood; Wine Up builds the experience around it.</p>
+          </div>
+        </article>
+      </div>
+    </section>
 
-  <div class="poster-frame">
-    <img
-      class="poster"
-      src="beyond-sauvignon-blanc-web.png"
-      alt="Beyond Sauvignon Blanc wine tasting at Stubby's on 15 September 2026">
-  </div>
-
-  <section class="booking-section">
-    <a
-      class="book-button"
-      href="https://checkout.square.site/merchant/MLZSPPA3CY54X/checkout/CKHLHPHBFSNTNXLIETANJMHJ"
-      target="_blank"
-      rel="noopener noreferrer">
-      Book your place
-    </a>
-  </section>
-
-  <footer>
-    <a href="mailto:stefania@wineup.uk">
-      stefania@wineup.uk
-    </a><br>
-
-    <a
-      href="https://www.instagram.com/wineup.uk/"
-      target="_blank"
-      rel="noopener noreferrer">
-      Instagram · @wineup.uk
-    </a>
-  </footer>
-
-</main>
-
+    <section class="upcoming" id="events">
+      <h2>Upcoming Events</h2>
+      <article class="event-strip">
+        <img class="event-poster" src="beyond-sauvignon-blanc-web.png" alt="Beyond Sauvignon Blanc event poster" width="106" height="150" loading="lazy">
+        <div class="event-copy">
+          <div>
+            <h3>Beyond Sauvignon Blanc</h3>
+            <p>Six vibrant whites and a special pairing menu by Stubby’s.</p>
+            <p class="event-details">15 September 2026 · 7pm · Stubby’s, Parsons Green · £40</p>
+          </div>
+          <a class="book-button" href="https://checkout.square.site/merchant/MLZSPPA3CY54X/checkout/CKHLHPHBFSNTNXLIETANJMHJ" target="_blank" rel="noopener">Book your place</a>
+        </div>
+      </article>
+    </section>
+  </main>
 </body>
 </html>
