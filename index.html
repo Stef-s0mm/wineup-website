@@ -93,9 +93,11 @@
       .service-row.reverse .service-visual { order: 2; }
       .service-row.reverse .service-image { order: 2; }
       .service-row.wide { display: grid; grid-template-columns: 1fr; }
-      .service-row.wide .service-image { position: static; min-height: 230px; }
+      .service-row.wide .service-image { position: static; height: auto; min-height: 0; object-fit: contain; }
       .service-row.wide .service-copy { width: 100%; min-height: 0; margin-right: 0; }
-      .service-image, .service-visual { min-height: 300px; }
+      .service-image { min-height: 300px; }
+      .service-row:nth-child(2) .service-image { height: auto; min-height: 0; object-fit: contain; }
+      .service-visual { min-height: 300px; }
       .upcoming { padding: 14px 0 68px; }
       .event-strip { align-items: flex-start; gap: 20px; min-height: 0; padding: 32px 24px; }
       .event-poster { width: 92px; height: 130px; flex-basis: 92px; }
